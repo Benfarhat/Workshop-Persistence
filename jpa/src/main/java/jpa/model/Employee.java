@@ -14,6 +14,13 @@ public class Employee {
 	      this.salary = salary;
 	      this.deg = deg;
 	   }
+	   
+	   public Employee(String ename, double salary, String deg) {
+		      super( );
+		      this.ename = ename;
+		      this.salary = salary;
+		      this.deg = deg;
+		   }
 
 	   public Employee( ) {
 	      super();

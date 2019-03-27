@@ -6,6 +6,27 @@
    http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
    version="1.0">  
    <description> XML Mapping file</description>    
+   
+   
+	<named-query name="Employee.findAll">
+		<query>SELECT e FROM Employee e ORDER BY e.eid
+		</query>
+		<hint name="eclipselink.query-results-cache" value="True" />
+	</named-query>
+	
+	<named-query name="Employee.findMinSalary">
+		<query>SELECT e FROM Employee e WHERE e.salary IN (SELECT MIN(ee.salary) FROM
+			Employee ee)
+		</query>
+	</named-query>
+	
+		
+	<named-query name="Employee.findMaxSalary">
+		<query>SELECT e FROM Employee e WHERE e.salary IN (SELECT MAX(ee.salary) FROM
+			Employee ee)
+		</query>
+	</named-query>
+
    <entity class="jpa.model.Employee">        
       <table name="EMPLOYEETABLE"/>
       <attributes>   
