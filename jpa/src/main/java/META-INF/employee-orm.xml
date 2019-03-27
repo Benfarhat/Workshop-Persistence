@@ -6,7 +6,7 @@
    http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
    version="1.0">  
    <description> XML Mapping file</description>    
-   <entity class="model.Employee">        
+   <entity class="jpa.model.Employee">        
       <table name="EMPLOYEETABLE"/>
       <attributes>   
          <id name="eid">
