@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+<configuration debug="false" scan="true" scanPeriod="30 seconds">
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+	<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+		<level>TRACE</level>
+	</filter>
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+      <charset>UTF-8</charset>
+    </encoder>
+  </appender>
+  <!-- Possible levels: TRACE, DEBUG, INFO, WARN and ERROR -->
+  <logger name="org.hibernate.type.descriptor.sql" level="debug"/>
+ 
+  <root level="debug">
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>

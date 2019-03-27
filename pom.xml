@@ -1,0 +1,202 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>local.benfarhat</groupId>
+  <artifactId>persistence</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Maven-JavaEE</name>
+  <description>A shorty description about Maven-JavaEE</description>
+  <developers>
+    <developer>
+      <id>benfarhat</id>
+      <name>Benfarhat Elyes</name>
+      <email>benfarhat.elyes@benfarhat.com</email>
+      <url>http://www.github.com/benfarhat</url>
+      <organization>ACME</organization>
+      <organizationUrl>http://www.myOrganization.com</organizationUrl>
+      <roles>
+        <role>architect</role>
+        <role>developer</role>
+      </roles>
+      <timezone>America/Montreal</timezone>
+      <properties>
+        <picUrl>https://avatars3.githubusercontent.com/u/1620009</picUrl>
+      </properties>
+    </developer>
+  </developers>
+
+  <organization>
+    <name>Java</name>
+    <url>http://www.java.com</url>
+  </organization>
+  
+  <licenses>
+      <license>
+        <name>Apache License, Version 2.0</name>
+        <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        <distribution>repo</distribution>
+        <comments>A business-friendly OSS license</comments>
+      </license>
+    </licenses>
+    
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    
+    <java.version>1.8</java.version>
+		
+    <junit.plateform.version>5.4.1</junit.plateform.version>
+    <junit.plateform.engine.version>1.4.1</junit.plateform.engine.version>
+    <derby.version>10.14.2.0</derby.version>
+    <slf4j.version>1.7.26</slf4j.version>
+		
+    <continuous.server.name>localCI</continuous.server.name>
+    <continuous.server.ip>127.0.0.1</continuous.server.ip>
+  </properties>
+
+<dependencies>
+  
+	<!-- https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api -->
+	<dependency>
+	    <groupId>javax.persistence</groupId>
+	    <artifactId>javax.persistence-api</artifactId>
+	    <version>2.2</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-core</artifactId>
+	    <version>5.4.2.Final</version>
+	</dependency>
+		
+	<!-- https://mvnrepository.com/artifact/org.eclipse.persistence/eclipselink -->
+	<dependency>
+	    <groupId>org.eclipse.persistence</groupId>
+	    <artifactId>eclipselink</artifactId>
+	    <version>2.7.4</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.apache.derby/derbyclient -->
+	<dependency>
+	    <groupId>org.apache.derby</groupId>
+	    <artifactId>derbyclient</artifactId>
+	    <version>${derby.version}</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.apache.derby/derby -->
+	<dependency>
+	    <groupId>org.apache.derby</groupId>
+	    <artifactId>derby</artifactId>
+	    <version>${derby.version}</version>
+	    <scope>test</scope>
+	</dependency>
+
+	<!-- LOG -->
+	
+	<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
+	<dependency>
+	    <groupId>ch.qos.logback</groupId>
+	    <artifactId>logback-core</artifactId>
+	    <version>1.2.3</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+	<dependency>
+	    <groupId>ch.qos.logback</groupId>
+	    <artifactId>logback-classic</artifactId>
+	    <version>1.2.3</version>
+	    <scope>test</scope>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-simple</artifactId>
+	    <version>${slf4j.version}</version>
+	    <scope>test</scope>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-api</artifactId>
+	    <version>${slf4j.version}</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-jdk14 -->
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-jdk14</artifactId>
+	    <version>${slf4j.version}</version>
+	    <scope>test</scope>
+	</dependency>
+	
+
+	<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+	<dependency>
+	    <groupId>org.junit.jupiter</groupId>
+	    <artifactId>junit-jupiter-api</artifactId>
+	    <version>${junit.plateform.version}</version>
+	    <scope>test</scope>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
+	<dependency>
+	    <groupId>org.junit.jupiter</groupId>
+	    <artifactId>junit-jupiter-engine</artifactId>
+	    <version>${junit.plateform.version}</version>
+	    <scope>test</scope>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine -->
+	<dependency>
+	    <groupId>org.junit.vintage</groupId>
+	    <artifactId>junit-vintage-engine</artifactId>
+	    <version>${junit.plateform.version}</version>
+	    <scope>test</scope>
+	</dependency>
+		
+	<!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-engine -->
+	<dependency>
+	    <groupId>org.junit.platform</groupId>
+	    <artifactId>junit-platform-engine</artifactId>
+	    <version>${junit.plateform.engine.version}</version>
+	    <scope>test</scope>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher -->
+	<dependency>
+	    <groupId>org.junit.platform</groupId>
+	    <artifactId>junit-platform-launcher</artifactId>
+	    <version>${junit.plateform.engine.version}</version>
+	    <scope>test</scope>
+	</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-runner -->
+	<dependency>
+	    <groupId>org.junit.platform</groupId>
+	    <artifactId>junit-platform-runner</artifactId>
+	    <version>${junit.plateform.engine.version}</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
+	<dependency>
+	    <groupId>org.mockito</groupId>
+	    <artifactId>mockito-all</artifactId>
+	    <version>1.9.5</version>
+	    <scope>test</scope>
+	</dependency>
+
+	
+  </dependencies>
+	<modules>
+		<module>persistence01</module>
+		<module>jpa</module>
+	</modules>
+</project>
